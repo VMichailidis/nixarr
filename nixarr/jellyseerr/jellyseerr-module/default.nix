@@ -68,13 +68,17 @@ in {
         Group = cfg.group;
         ExecStart = lib.getExe cfg.package;
         Restart = "on-failure";
+
         ProtectHome = true;
-        ProtectSystem = "strict";
+
+        # ProtectSystem = "strict";
+        # 
         PrivateTmp = true;
         PrivateDevices = true;
         ProtectHostname = true;
         ProtectClock = true;
         ProtectKernelTunables = true;
+        
         ProtectKernelModules = true;
         ProtectKernelLogs = true;
         ProtectControlGroups = true;
